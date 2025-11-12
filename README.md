@@ -88,3 +88,29 @@ const verifyFireBaseToken = async (req, res, next) => {
 ```
 
 ---
+
+## 🧭 API Endpoints Overview
+
+### Users
+
+- `GET /users` ‑ Get all users (admin only)
+- `POST /users` ‑ Add a new user
+
+### Cars
+
+- `GET /cars` ‑ Get all cars, optional query ?email=providerEmail
+- `GET /featured-cars` ‑ Get latest 6 cars
+- `GET /cars/:id` ‑ Get a single car by ID
+- `POST /cars` ‑ Add new car (protected)
+- `PATCH /cars/:id` ‑ Update car info
+- `DELETE /cars/:id` ‑ Delete a car
+- `GET /cars/provider/:email` ‑ Get cars by provider email
+
+### Bookings
+
+- `GET /bookings?email=userEmail` ‑ Get bookings for user or provider (protected)
+- `POST /bookings` ‑ Create a new booking
+- `DELETE /bookings/:id` ‑ Delete booking by ID
+- `GET /cars/bookings/:productId` ‑ Get bookings for a specific car
+
+---
