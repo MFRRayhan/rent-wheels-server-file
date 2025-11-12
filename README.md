@@ -41,3 +41,29 @@ MONGO_URI=your_mongo_connection_string
 Also include your Firebase service account credentials file `serviceAccountKey.json`.
 
 ---
+
+## 📦 Installation & Setup
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/MFRRayhan/rent-wheels-server-file.git
+
+# 2. Navigate into project folder
+cd rent-wheels-server-file
+
+# 3. Install dependencies
+npm install
+
+# 4. Add `.env` and `serviceAccountKey.json`
+
+# 5. Start the server
+npm start
+```
+
+Server will run at:
+
+```
+http://localhost:3000
+```
+
+---
