@@ -141,8 +141,8 @@ async function run() {
       }
     });
 
-    // DELETE car
-    app.delete("/cars/:id", async (req, res) => {
+    // DELETE car (protected)
+    app.delete("/cars/:id", verifyFireBaseToken, async (req, res) => {
       const id = req.params.id;
       const result = await carsCollection.deleteOne({ _id: new ObjectId(id) });
       res.send({ success: result.deletedCount > 0 });
@@ -170,9 +170,14 @@ async function run() {
       res.send(bookings);
     });
 
-    // POST new booking
-    app.post("/bookings", async (req, res) => {
+    // POST new booking (protected)
+    app.post("/bookings", verifyFireBaseToken, async (req, res) => {
       const newBooking = req.body;
+      // ensure user can only book for themselves
+      if (newBooking.userEmail !== req.token_email) {
+        return res.status(403).send({ message: "forbidden access" });
+      }
+
       const result = await bookingsCollection.insertOne(newBooking);
       res.send(result);
     });
