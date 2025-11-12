@@ -114,3 +114,11 @@ const verifyFireBaseToken = async (req, res, next) => {
 - `GET /cars/bookings/:productId` ‑ Get bookings for a specific car
 
 ---
+
+## 🧠 Error Handling
+
+- `401 Unauthorized` – Token missing or invalid
+- `403 Forbidden` – User not authorized for requested resource
+- `500 Internal Server Error` – Unexpected server error
+
+---
