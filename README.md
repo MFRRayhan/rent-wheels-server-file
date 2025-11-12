@@ -136,3 +136,9 @@ rent-wheels-server/
 ```
 
 ---
+
+## 🧑‍💻 Author
+
+**Md. Fazle Rabbi Rayhan**
+📧 [md.fazlerabbirayhan786@gmail.com](mailto:md.fazlerabbirayhan786@gmail.com)
+🔗 [GitHub: MFRRayhan](https://github.com/MFRRayhan)
