@@ -15,3 +15,29 @@ It handles user authentication, car listings, and booking management using **Nod
 - Easy to deploy on a Node.js supported hosting
 
 ---
+
+## 🛠️ Tech Stack
+
+| Technology         | Description                              |
+| ------------------ | ---------------------------------------- |
+| Node.js            | JavaScript runtime                       |
+| Express.js         | Web framework                            |
+| MongoDB            | NoSQL database                           |
+| Firebase Admin SDK | Authentication & token verification      |
+| dotenv             | Manage environment variables             |
+| CORS               | Cross‑Origin Resource Sharing middleware |
+
+---
+
+## ⚙️ Environment Variables
+
+Create a `.env` file in the root directory containing:
+
+```
+PORT=3000
+MONGO_URI=your_mongo_connection_string
+```
+
+Also include your Firebase service account credentials file `serviceAccountKey.json`.
+
+---
