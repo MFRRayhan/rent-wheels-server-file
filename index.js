@@ -3,7 +3,7 @@ const cors = require("cors");
 require("dotenv").config();
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const admin = require("firebase-admin");
-const serviceAccount = require("./serviceAccountKey.json");
+// const serviceAccount = require("./serviceAccountKey.json");
 
 // index.js
 const decoded = Buffer.from(
