@@ -122,14 +122,23 @@ async function run() {
     });
 
     // PATCH update car
-    app.patch("/cars/:id", async (req, res) => {
+    app.patch("/cars/:id", verifyFireBaseToken, async (req, res) => {
       const id = req.params.id;
       const updateData = req.body;
-      const result = await carsCollection.updateOne(
-        { _id: new ObjectId(id) },
-        { $set: updateData }
-      );
-      res.send(result);
+
+      try {
+        const result = await carsCollection.updateOne(
+          { _id: new ObjectId(id) },
+          { $set: updateData }
+        );
+        if (result.modifiedCount === 0)
+          return res
+            .status(404)
+            .send({ message: "Car not found or no change" });
+        res.send(result);
+      } catch (err) {
+        res.status(500).send({ message: err.message });
+      }
     });
 
     // DELETE car
