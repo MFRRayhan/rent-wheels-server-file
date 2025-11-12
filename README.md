@@ -67,3 +67,24 @@ http://localhost:3000
 ```
 
 ---
+
+## 🔑 Authentication Middleware
+
+```js
+const verifyFireBaseToken = async (req, res, next) => {
+  const authorization = req.headers.authorization;
+  if (!authorization)
+    return res.status(401).send({ message: "unauthorized access" });
+
+  const token = authorization.split(" ")[1];
+  try {
+    const decoded = await admin.auth().verifyIdToken(token);
+    req.token_email = decoded.email;
+    next();
+  } catch (error) {
+    return res.status(401).send({ message: "unauthorized access" });
+  }
+};
+```
+
+---
