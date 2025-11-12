@@ -122,3 +122,17 @@ const verifyFireBaseToken = async (req, res, next) => {
 - `500 Internal Server Error` – Unexpected server error
 
 ---
+
+## 🧩 Project Structure
+
+```
+rent-wheels-server/
+│
+├── serviceAccountKey.json     # Firebase credentials
+├── .env                       # Environment variables
+├── server.js                  # Main server file
+├── package.json               # Dependencies and scripts
+└── README.md                  # (this file)
+```
+
+---
