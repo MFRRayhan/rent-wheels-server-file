@@ -52,7 +52,7 @@ const verifyFireBaseToken = async (req, res, next) => {
 // ===================== MAIN SERVER FUNCTION =====================
 async function run() {
   try {
-    await client.connect();
+    // await client.connect();
     const db = client.db("rentWheelsDB");
 
     const usersCollection = db.collection("users");
